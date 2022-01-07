@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.vscode/
+
+# Don't want to upload large video files, etc.
+examples/media
 
 # C extensions
 *.so
