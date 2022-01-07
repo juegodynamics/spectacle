@@ -2,10 +2,10 @@
 
 from manim import *
 
-from .diagrams.feynman import *
-from .diagrams.lines import *
-from .utils.paths import *
-from .utils.colors import *
+from .physics.feynman import *
+from .manim_extension.mobject.geometry import *
+from .manim_extension.utils.color import *
+from .manim_extension.utils.paths import *
 
 
 print("Welcome to spectacle")

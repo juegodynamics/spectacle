@@ -1,5 +1,5 @@
 from manim import *
-from .lines import WavyLine
+from ..manim_extension.mobject.geometry import WavyLine
 
 __all__ = [
     "ELECTRON",
