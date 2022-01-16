@@ -1,6 +1,6 @@
 from manim import *
 from manim.mobject.opengl_compatibility import ConvertToOpenGL
-from ..utils.paths import *
+from spectacle.manim_extension.utils.paths import *
 import random
 
 
