@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/FullVideo/480p15/partial_movie_files/FeynmanVideo/3163782288_3849752149_1790267289.mp4'
+file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/FullVideo/480p15/partial_movie_files/FeynmanVideo/2201830969_378179449_3894856577.mp4'
+file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/FullVideo/480p15/partial_movie_files/FeynmanVideo/2201830969_4198531722_992051748.mp4'
+file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/FullVideo/480p15/partial_movie_files/FeynmanVideo/2201830969_2925793624_2055770134.mp4'
+file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/FullVideo/480p15/partial_movie_files/FeynmanVideo/2201830969_3794615802_1884162072.mp4'
+file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/FullVideo/480p15/partial_movie_files/FeynmanVideo/2201830969_1409504784_3329146782.mp4'

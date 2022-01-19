@@ -19,16 +19,16 @@ class SpaceTime(Scene):
         # ).set_color_by_gradient(RAINBOW)
         horizontals = [
             Line(
-                start=as_point(-bounds, y),
-                end=as_point(bounds, y),
+                start=point(-bounds, y),
+                end=point(bounds, y),
                 stroke_width=2,
             )
             for y in np.arange(-bounds, bounds, dx)
         ]
         verticals = [
             Line(
-                start=as_point(x, -bounds),
-                end=as_point(x, bounds),
+                start=point(x, -bounds),
+                end=point(x, bounds),
                 stroke_width=2,
             )
             for x in np.arange(-bounds, bounds, dx)
@@ -58,16 +58,16 @@ class LineGrid(VMobject):
         super().__init__(**kwargs)
         self.horizontals = [
             Line(
-                start=as_point(-bounds, y),
-                end=as_point(bounds, y),
+                start=point(-bounds, y),
+                end=point(bounds, y),
                 stroke_width=2,
             )
             for y in np.arange(-bounds, bounds, dx)
         ]
         self.verticals = [
             Line(
-                start=as_point(x, -bounds),
-                end=as_point(x, bounds),
+                start=point(x, -bounds),
+                end=point(x, bounds),
                 stroke_width=2,
             )
             for x in np.arange(-bounds, bounds, dx)

@@ -1,7 +1,7 @@
 from typing import Iterable
 from manim import *
 from spectacle.manim_extension.mobject.geometry import WavyLine
-from spectacle.manim_extension.utils.paths import as_point
+from spectacle.manim_extension.utils.paths import point
 
 # __all__ = [
 #     "ELECTRON",
@@ -50,7 +50,7 @@ class Fermion(Particle):
         self.line.apply_function(lambda p: self.arc.point_from_proportion(p[0]))
 
         # linear_angle = self.line.get_angle()
-        # perp = as_point(-np.sin(linear_angle), np.cos(linear_angle))
+        # perp = point(-np.sin(linear_angle), np.cos(linear_angle))
         # normal = self.rad * perp / np.linalg.norm(perp)
 
         # def transform_arc(p):
@@ -137,7 +137,7 @@ class Quark(Fermion):
 #     self.line = Line(start=start, end=end, color=color, **kwargs)
 #     self.arc = ArcBetweenPoints(start, end, angle=angle)
 #     linear_angle = self.line.get_angle()
-#     perp = as_point(-np.sin(linear_angle), np.cos(linear_angle))
+#     perp = point(-np.sin(linear_angle), np.cos(linear_angle))
 #     normal = self.rad * perp / np.linalg.norm(perp)
 
 #     def transform_arc(p):
@@ -147,10 +147,10 @@ class Quark(Fermion):
 #         return new_p + y * ((1 - 2 * angle / PI) * normal + (2 * angle / PI) * vec_to_center)
 
 #     self.body = Polygon(
-#         as_point(0, -self.rad),
-#         as_point(0, self.rad),
-#         as_point(1, self.rad),
-#         as_point(1, -self.rad),
+#         point(0, -self.rad),
+#         point(0, self.rad),
+#         point(1, self.rad),
+#         point(1, -self.rad),
 #         color=color,
 #         fill_opacity=1,
 #     ).apply_function(transform_arc)
@@ -207,7 +207,7 @@ class Photon(Particle):
             vec_to_center = new_p - self.arc.get_center()
 
             linear_angle = self.line.get_angle()
-            perp = as_point(-np.sin(linear_angle), np.cos(linear_angle))
+            perp = point(-np.sin(linear_angle), np.cos(linear_angle))
             normal = perp / np.linalg.norm(perp)
 
             return new_p + y * ((1 - 2 * angle / PI) * normal + (2 * angle / PI) * vec_to_center)
@@ -249,7 +249,7 @@ class Gluon(Particle):
         #     vec_to_center = new_p - self.arc.get_center()
 
         #     linear_angle = self.line.get_angle()
-        #     perp = as_point(-np.sin(linear_angle), np.cos(linear_angle))
+        #     perp = point(-np.sin(linear_angle), np.cos(linear_angle))
         #     normal = perp / np.linalg.norm(perp)
 
         #     return new_p + y * ((1 - 2 * angle / PI) * normal + (2 * angle / PI) * vec_to_center)

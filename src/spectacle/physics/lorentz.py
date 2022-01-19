@@ -1,5 +1,5 @@
 from manim import *
-from spectacle.manim_extension.utils.paths import as_point
+from spectacle.manim_extension.utils.paths import point
 
 # from typing import NewType
 
@@ -16,7 +16,7 @@ from spectacle.manim_extension.utils.paths import as_point
 
 def lorentz_x(t: float, x: float, v: float):
     gamma = 1 / np.sqrt(1 - (v ** 2))
-    return as_point(
+    return point(
         gamma * (t - v * x),
         gamma * (x - v * t),
     )
