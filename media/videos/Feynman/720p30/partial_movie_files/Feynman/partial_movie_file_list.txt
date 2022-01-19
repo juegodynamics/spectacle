@@ -1,2 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/jacovie/src/github.com/juegodynamics/spectacle/media/videos/Feynman/720p30/partial_movie_files/Feynman/1342159004_1433752658_1577535401.mp4'
