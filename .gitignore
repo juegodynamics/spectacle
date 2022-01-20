@@ -4,8 +4,9 @@ __pycache__/
 *$py.class
 .vscode/
 
-# Don't want to upload large video files, etc.
-examples/media
+# Ignore all produced content
+media
+out
 
 # C extensions
 *.so

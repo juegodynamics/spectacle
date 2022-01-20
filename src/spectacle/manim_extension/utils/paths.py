@@ -1,7 +1,7 @@
 from manim import *
 
 
-def point(*num_list_or_val) -> np.ndarray:
+def _3d(*num_list_or_val) -> np.ndarray:
     num_list = num_list_or_val
     if len(num_list_or_val) == 0 and type(num_list_or_val[0]) == list:
         num_list = num_list_or_val[0]
@@ -17,7 +17,7 @@ def get_polar_angle(start=LEFT, end=RIGHT) -> float:
 
 
 def get_unit_for_angle(angle=PI / 3) -> np.ndarray:
-    return point(np.cos(angle), np.sin(angle))
+    return _3d(np.cos(angle), np.sin(angle))
 
 
 def diff_length(start=LEFT, end=RIGHT) -> float:

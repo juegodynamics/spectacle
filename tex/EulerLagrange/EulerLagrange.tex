@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath, amssymb, graphics, setspace, tcolorbox, fancyhdr, accents, cancel}
+\pagestyle{fancy}
+\setlength{\headheight}{20pt}
+
+\newcommand{\DD}[2]{\frac{d #1}{d #2}}
+\newcommand{\At}[1]{\Bigr|_{#1}}
+\newcommand{\PD}[2]{\frac{\partial #1}{\partial #2}}
+
+\begin{document}
+\lhead{Jacovie Rodriguez}
+\rhead{Explorations}
+
+A Lagrangian is dependent on a given function $f$:
+\begin{equation}
+    L[f] = L \left( x, f(x), f'(x) \right)
+\end{equation}
+
+The Action is defined as a path integral for the Lagrangian:
+\begin{equation}
+    A[f] = \int_a^b L[f] dx
+\end{equation}
+
+Suppose $f(x)$ extremizes $A$. Then let's define $\zeta$ as small arbitrary perturbation of $f$:
+\begin{equation}
+    \label{eqn:perturbation}
+    \zeta(x) = f(x) + \epsilon \eta(x)
+\end{equation}
+\begin{itemize}
+    \setlength{\itemindent}{2em}
+    \item The $\eta(x)$ is the difference between $f$ and its perturbation $\zeta$. Since $\zeta$ must start on $a$ and end on $b$ just as $f$, this requires that $\eta(a) = \eta(b) = 0$.
+    \item The $\epsilon$ here is a small constant. By definition, $\zeta \to f$ as $\epsilon \to 0$.
+\end{itemize}
+
+If we analyze the perturbed Action
+\begin{equation}
+    A[\zeta] = \int_a^b L \left( \zeta \right) dx
+\end{equation}
+
+\hspace{\parindent} then we see as $\epsilon \to 0$, $A[\zeta] \to A[f]$.
+\\
+
+Since $A[f]$ is an extremum, then it must be the case that:
+\begin{equation}
+    \label{eqn:actionlimit}
+    \lim_{\epsilon \to 0} \DD{A[\zeta]}{\epsilon} = 0
+\end{equation}
+
+Let's see how we can evaluate the total derivative via chain rule:
+\begin{align}
+    \DD{A[\zeta]}{\epsilon}
+     & = \DD{}{\epsilon} \int_a^b L [\zeta] dx \\
+     & = \int_a^b \DD{L}{\epsilon} dx          \\
+     & = \int_a^b \left[
+        \DD{x}{\epsilon} \PD{L}{x}
+        + \DD{\zeta}{\epsilon} \PD{L}{\zeta}
+        + \DD{\zeta'}{\epsilon} \PD{L}{\zeta'}
+        \right] dx
+\end{align}
+
+We can evaluate each total derivative:
+
+\begin{center}
+    \begin{tabular}{ c|c|c }
+        $\displaystyle \DD{x}{\epsilon}  = 0$
+         & $\displaystyle \DD{\zeta}{\epsilon}  = \eta(x)$
+         & $\displaystyle \DD{\zeta'}{\epsilon} = \eta'(x)$   \\
+         &                                                  & \\
+        since $x$ doesn't depend on $\epsilon$
+         & since $\zeta(x) = f(x) + \epsilon \eta(x)$
+         & since $\zeta'(x) = f'(x) + \epsilon \eta'(x)$      \\
+    \end{tabular}
+\end{center}
+
+Altogether then,
+\begin{align}
+    \DD{A[\zeta]}{\epsilon}
+     & = \int_a^b
+    \left[
+        \eta(x) \PD{L}{\zeta}
+        + \eta'(x) \PD{L}{\zeta'}
+    \right] dx    \\
+    \lim_{\epsilon \to 0}
+    \DD{A[\zeta]}{\epsilon}
+     & = \int_a^b
+    \left[
+        \eta(x) \PD{L}{f}
+        + \eta'(x) \PD{L}{f'}
+        \right] dx
+    = 0
+\end{align}
+
+\hspace{\parindent} where the last line goes to zero following from (\ref{eqn:actionlimit}).
+\\
+
+Now, we have information about $\eta$ and its axes, but not $\eta'$.
+
+
+\end{document}

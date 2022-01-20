@@ -1,6 +1,6 @@
 from spectacle import *
 
 
-def test_point():
-    p = point([1, 1, 0])
+def test__3d():
+    p = _3d([1, 1, 0])
     assert p == np.array([1, 1, 0])

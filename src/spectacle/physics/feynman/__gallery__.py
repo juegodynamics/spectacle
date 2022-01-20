@@ -1,5 +1,5 @@
-from particles import *
-from layout import *
+from .particles import *
+from .layout import *
 
 
 class Gallery_QED_FeynmanDiagramScene(Scene):

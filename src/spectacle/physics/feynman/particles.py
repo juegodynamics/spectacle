@@ -1,7 +1,7 @@
 from typing import Iterable
 from manim import *
-from spectacle.manim_extension.mobject.geometry import WavyLine
-from spectacle.manim_extension.utils.paths import point
+from ...manim_extension.mobject.geometry import WavyLine
+from ...manim_extension.utils.paths import _3d
 
 # __all__ = [
 #     "ELECTRON",
@@ -50,7 +50,7 @@ class Fermion(Particle):
         self.line.apply_function(lambda p: self.arc.point_from_proportion(p[0]))
 
         # linear_angle = self.line.get_angle()
-        # perp = point(-np.sin(linear_angle), np.cos(linear_angle))
+        # perp = _3d(-np.sin(linear_angle), np.cos(linear_angle))
         # normal = self.rad * perp / np.linalg.norm(perp)
 
         # def transform_arc(p):
@@ -137,7 +137,7 @@ class Quark(Fermion):
 #     self.line = Line(start=start, end=end, color=color, **kwargs)
 #     self.arc = ArcBetweenPoints(start, end, angle=angle)
 #     linear_angle = self.line.get_angle()
-#     perp = point(-np.sin(linear_angle), np.cos(linear_angle))
+#     perp = _3d(-np.sin(linear_angle), np.cos(linear_angle))
 #     normal = self.rad * perp / np.linalg.norm(perp)
 
 #     def transform_arc(p):
@@ -147,15 +147,15 @@ class Quark(Fermion):
 #         return new_p + y * ((1 - 2 * angle / PI) * normal + (2 * angle / PI) * vec_to_center)
 
 #     self.body = Polygon(
-#         point(0, -self.rad),
-#         point(0, self.rad),
-#         point(1, self.rad),
-#         point(1, -self.rad),
+#         _3d(0, -self.rad),
+#         _3d(0, self.rad),
+#         _3d(1, self.rad),
+#         _3d(1, -self.rad),
 #         color=color,
 #         fill_opacity=1,
 #     ).apply_function(transform_arc)
 
-#     vec_to_center = self.arc.point_from_proportion(0.5) - self.line.get_midpoint()
+#     vec_to_center = self.arc.point_from_proportion(0.5) - self.line.get_mid_3d()
 #     actual_arc_midpoint = self.arc.point_from_proportion(0.5) - vec_to_center * stroke * 4
 
 #     self.midarrow_tip = (
@@ -207,7 +207,7 @@ class Photon(Particle):
             vec_to_center = new_p - self.arc.get_center()
 
             linear_angle = self.line.get_angle()
-            perp = point(-np.sin(linear_angle), np.cos(linear_angle))
+            perp = _3d(-np.sin(linear_angle), np.cos(linear_angle))
             normal = perp / np.linalg.norm(perp)
 
             return new_p + y * ((1 - 2 * angle / PI) * normal + (2 * angle / PI) * vec_to_center)
@@ -249,7 +249,7 @@ class Gluon(Particle):
         #     vec_to_center = new_p - self.arc.get_center()
 
         #     linear_angle = self.line.get_angle()
-        #     perp = point(-np.sin(linear_angle), np.cos(linear_angle))
+        #     perp = _3d(-np.sin(linear_angle), np.cos(linear_angle))
         #     normal = perp / np.linalg.norm(perp)
 
         #     return new_p + y * ((1 - 2 * angle / PI) * normal + (2 * angle / PI) * vec_to_center)
@@ -310,7 +310,7 @@ class MidpointNormalLabel(MathTex):
     def __init__(self, *text_strings, line: VMobject, **kwargs):
         super().__init__(*text_strings, **kwargs)
         angle = line.get_angle()
-        midpoint = line.get_midpoint()
+        midpoint = line.get_mid_3d()
         normal_point = np.array([-np.sin(angle), np.cos(angle), 0])
         if np.abs(midpoint[0] - normal_point[0]) < np.abs(midpoint[0] + normal_point[0]):
             normal_point = -1 * normal_point

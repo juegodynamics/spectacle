@@ -1,4 +1,4 @@
-from particles import *
+from .particles import *
 
 
 def get_particle_renderers():
